@@ -23,7 +23,7 @@
     "joi": "^14.3.1",
     "keycloak-connect": "^5.0.0",
     "multer": "^1.4.1",
-    "npm": "^6.9.0",
+    "npm": "^6.13.4",
     "superagent": "^4.1.0",
     "tesseractocr": "^1.2.1",
     "uuid": "^3.3.2",
