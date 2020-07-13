@@ -75,6 +75,10 @@ const config: IConfig = {
       mimetype: 'image/gif',
       signature: '47494638'
     },
+    gpg: {
+      mimetype: 'application/octet-stream',
+      signature: '85'
+    },
     jpg: {
       mimetype: 'image/jpeg',
       signature: 'ffd8ffe0'

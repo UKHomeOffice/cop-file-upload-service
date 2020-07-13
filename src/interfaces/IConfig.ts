@@ -47,6 +47,7 @@ interface IConfig {
     eps: IValidFileType,
     flv: IValidFileType,
     gif: IValidFileType,
+    gpg: IValidFileType,
     jpg: IValidFileType,
     m4v: IValidFileType,
     mov: IValidFileType,

@@ -23,6 +23,7 @@ The following file types can be uploaded:
 - eps
 - flv
 - gif
+- gpg
 - jpg
 - m4v
 - mov
