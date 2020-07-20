@@ -34,6 +34,7 @@ The following file types can be uploaded:
 - ogg
 - ogv
 - pdf
+- pgp
 - png
 - pps
 - ppt
