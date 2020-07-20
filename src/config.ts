@@ -121,6 +121,11 @@ const config: IConfig = {
       mimetype: 'application/pdf',
       signature: '25504446'
     },
+    pgp: {
+      mimetype: 'application/octet-stream',
+      offset: 4,
+      signature: '504750'
+    },
     png: {
       mimetype: 'image/png',
       signature: '89504e470d0a1a0a'

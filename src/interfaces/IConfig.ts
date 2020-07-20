@@ -58,6 +58,7 @@ interface IConfig {
     ogg: IValidFileType,
     ogv: IValidFileType,
     pdf: IValidFileType,
+    pgp: IValidFileType,
     png: IValidFileType,
     pps: IValidFileType,
     ppt: IValidFileType,
