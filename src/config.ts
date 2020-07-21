@@ -122,7 +122,7 @@ const config: IConfig = {
       signature: '25504446'
     },
     pgp: {
-      mimetype: 'application/octet-stream',
+      mimetype: 'application/pgp-encrypted',
       offset: 4,
       signature: '504750'
     },
