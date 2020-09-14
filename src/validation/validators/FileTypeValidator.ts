@@ -27,9 +27,9 @@ class FileTypeValidator implements IValidator {
     return !offset ? fileHex : fileHex.substr(offset, fileHex.length);
   }
 
-  public static isValidHex(value: Buffer, offset: number | undefined, signature: string): boolean {
+  public static isValidHex(value: Buffer, offset: number | undefined, signatures: string[]): boolean {
     const fileHex: string = FileTypeValidator.fileHex(value, offset);
-    return fileHex.startsWith(signature);
+    return signatures.some((signature: string): boolean => fileHex.startsWith(signature));
   }
 
   public static isValidMimeType(validFileTypes: IConfig['validFileTypes'], fileMimeType: string): boolean {
@@ -52,19 +52,19 @@ class FileTypeValidator implements IValidator {
         name: 'hex',
         validate(params: object, value: Buffer, state: IState, options: object): any {
           const validator = FileTypeValidator;
-          let signature: string;
+          let signatures: string[];
           let offset: number | undefined;
-          ({signature, offset} = validator.validFileProps(
+          ({signatures, offset} = validator.validFileProps(
             validFileTypes, validator.mimeFilter(state.parent.mimetype)
           ));
-          let isValidHex: boolean = validator.isValidHex(value, offset, signature);
+          let isValidHex: boolean = validator.isValidHex(value, offset, signatures);
 
           if (!isValidHex) {
             const fileExtension = validator.fileExtension(state.parent.originalname);
-            ({signature, offset} = validator.validFileProps(
+            ({signatures, offset} = validator.validFileProps(
               validFileTypes, validator.extensionFilter(fileExtension)
             ));
-            isValidHex = validator.isValidHex(value, offset, signature);
+            isValidHex = validator.isValidHex(value, offset, signatures);
           }
 
           return isValidHex ? value : joi.createError('fileType.hex', {value}, state, options);
