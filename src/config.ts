@@ -50,114 +50,114 @@ const config: IConfig = {
   validFileTypes: {
     avi: {
       mimetype: 'video/x-msvideo',
-      signature: '52494646'
+      signatures: ['52494646']
     },
     doc: {
       mimetype: 'application/msword',
-      signature: 'd0cf11e0a1b11ae1'
+      signatures: ['d0cf11e0a1b11ae1']
     },
     docx: {
       mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-      signature: '504b0304'
+      signatures: ['504b0304']
     },
     dot: {
       mimetype: 'application/msword',
-      signature: 'd0cf11e0a1b11ae1'
+      signatures: ['d0cf11e0a1b11ae1']
     },
     eps: {
       mimetype: 'application/postscript',
-      signature: '252150532d41646f'
+      signatures: ['252150532d41646f']
     },
     flv: {
       mimetype: 'video/x-flv',
-      signature: '464c56'
+      signatures: ['464c56']
     },
     gif: {
       mimetype: 'image/gif',
-      signature: '47494638'
+      signatures: ['47494638']
     },
     gpg: {
       mimetype: 'application/octet-stream',
-      signature: '85'
+      signatures: ['85']
     },
     jpg: {
       mimetype: 'image/jpeg',
-      signature: 'ffd8ffe0'
+      signatures: ['ffd8ffe0', 'ffd8ffe1']
     },
     m4v: {
       mimetype: 'video/x-m4v',
       offset: 8,
-      signature: '667479704d345620'
+      signatures: ['667479704d345620']
     },
     mov: {
       mimetype: 'video/quicktime',
       offset: 8,
-      signature: '6674797071742020'
+      signatures: ['6674797071742020']
     },
     mp3: {
       mimetype: 'audio/mpeg',
-      signature: '494433'
+      signatures: ['494433']
     },
     odp: {
       mimetype: 'application/vnd.oasis.opendocument.presentation',
-      signature: '504b0304'
+      signatures: ['504b0304']
     },
     odt: {
       mimetype: 'application/vnd.oasis.opendocument.text',
-      signature: '504b0304'
+      signatures: ['504b0304']
     },
     oga: {
       mimetype: 'audio/ogg',
-      signature: '4f67675300020000'
+      signatures: ['4f67675300020000']
     },
     ogg: {
       mimetype: 'audio/ogg',
-      signature: '4f67675300020000'
+      signatures: ['4f67675300020000']
     },
     ogv: {
       mimetype: 'video/ogg',
-      signature: '4f67675300020000'
+      signatures: ['4f67675300020000']
     },
     pdf: {
       mimetype: 'application/pdf',
-      signature: '25504446'
+      signatures: ['25504446']
     },
     pgp: {
       mimetype: 'application/pgp-encrypted',
       offset: 4,
-      signature: '504750'
+      signatures: ['504750']
     },
     png: {
       mimetype: 'image/png',
-      signature: '89504e470d0a1a0a'
+      signatures: ['89504e470d0a1a0a']
     },
     pps: {
       mimetype: 'application/vnd.ms-powerpoint',
-      signature: 'd0cf11e0a1b11ae1'
+      signatures: ['d0cf11e0a1b11ae1']
     },
     ppt: {
       mimetype: 'application/vnd.ms-powerpoint',
-      signature: 'd0cf11e0a1b11ae1'
+      signatures: ['d0cf11e0a1b11ae1']
     },
     pptx: {
       mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-      signature: '504b0304'
+      signatures: ['504b0304']
     },
     rtf: {
       mimetype: 'application/rtf',
-      signature: '7b5c72746631'
+      signatures: ['7b5c72746631']
     },
     tif: {
       mimetype: 'image/tiff',
-      signature: '49492a00'
+      signatures: ['49492a00']
     },
     xls: {
       mimetype: 'application/vnd.ms-excel',
-      signature: 'd0cf11e0a1b11ae1'
+      signatures: ['d0cf11e0a1b11ae1']
     },
     xlsx: {
       mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      signature: '504b0304'
+      signatures: ['504b0304']
     }
   }
 };

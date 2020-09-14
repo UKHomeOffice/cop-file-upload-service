@@ -75,15 +75,15 @@ describe('FileTypeValidator', () => {
     const offset: number = 0;
 
     it('should return true when the file hex is valid', (done) => {
-      const signature: string = '32353530';
-      const isValidHex: boolean = FileTypeValidator.isValidHex(value, offset, signature);
+      const signatures: string[] = ['32353530', '504b0304'];
+      const isValidHex: boolean = FileTypeValidator.isValidHex(value, offset, signatures);
       expect(isValidHex).to.be.true;
       done();
     });
 
     it('should return false when the file hex is invalid', (done) => {
-      const signature: string = '504b0304';
-      const isValidHex: boolean = FileTypeValidator.isValidHex(value, offset, signature);
+      const signatures: string[] = ['504b0304', '932ab8c1'];
+      const isValidHex: boolean = FileTypeValidator.isValidHex(value, offset, signatures);
       expect(isValidHex).to.be.false;
       done();
     });

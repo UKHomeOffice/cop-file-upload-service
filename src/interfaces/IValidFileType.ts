@@ -1,6 +1,6 @@
 interface IValidFileType {
   mimetype: string;
-  signature: string;
+  signatures: string[];
   offset?: number;
 }
 
