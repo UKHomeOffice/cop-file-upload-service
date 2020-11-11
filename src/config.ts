@@ -52,6 +52,10 @@ const config: IConfig = {
       mimetype: 'video/x-msvideo',
       signatures: ['52494646']
     },
+    csv: {
+      mimetype: 'text/csv',
+      signatures: []
+    },
     doc: {
       mimetype: 'application/msword',
       signatures: ['d0cf11e0a1b11ae1']
