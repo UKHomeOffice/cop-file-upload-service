@@ -29,7 +29,7 @@ class FileTypeValidator implements IValidator {
 
   public static isValidHex(value: Buffer, offset: number | undefined, signatures: string[]): boolean {
     const fileHex: string = FileTypeValidator.fileHex(value, offset);
-    return signatures.some((signature: string): boolean => fileHex.startsWith(signature));
+    return signatures.length ? signatures.some((signature: string): boolean => fileHex.startsWith(signature)) : true;
   }
 
   public static isValidMimeType(validFileTypes: IConfig['validFileTypes'], fileMimeType: string): boolean {

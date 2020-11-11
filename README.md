@@ -17,6 +17,7 @@ Currently S3 is supported for storage
 The following file types can be uploaded:
 
 - avi
+- csv
 - doc
 - docx
 - dot

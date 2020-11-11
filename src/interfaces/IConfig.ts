@@ -41,6 +41,7 @@ interface IConfig {
   };
   validFileTypes: {
     avi: IValidFileType,
+    csv: IValidFileType,
     doc: IValidFileType,
     docx: IValidFileType,
     dot: IValidFileType,

@@ -81,6 +81,13 @@ describe('FileTypeValidator', () => {
       done();
     });
 
+    it('should return true when no signatures are specified', (done) => {
+      const signatures: string[] = [];
+      const isValidHex: boolean = FileTypeValidator.isValidHex(value, offset, signatures);
+      expect(isValidHex).to.be.true;
+      done();
+    });
+
     it('should return false when the file hex is invalid', (done) => {
       const signatures: string[] = ['504b0304', '932ab8c1'];
       const isValidHex: boolean = FileTypeValidator.isValidHex(value, offset, signatures);
