@@ -12,7 +12,7 @@ interface IConfig {
   services: {
     virusScan: {
       host: string,
-      port: string | number,
+      port: string | number | undefined,
       path: string
     },
     s3: {
