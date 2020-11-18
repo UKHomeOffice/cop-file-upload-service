@@ -83,31 +83,6 @@ spec:
         volumeMounts:
           - name: certs
             mountPath: /certs
-      - name: clamav
-        image: quay.io/ukhomeofficedigital/clamav:v0.101.3
-        ports:
-          - containerPort: 3310
-        resources:
-          requests:
-            memory: "2048M"
-            cpu: "1"
-          limits:
-            memory: "4096M"
-            cpu: "1"
-      - name: clamav-api
-        image: quay.io/ukhomeofficedigital/docker-clamav-rest:1.0.0
-        ports:
-          - containerPort: 8080
-        env:
-           - name: CLAMD_HOST
-             value: localhost
-        resources:
-          requests:
-            memory: "2048M"
-            cpu: "1"
-          limits:
-            memory: "4096M"
-            cpu: "1"
       - name: {{.FILE_UPLOAD_SERVICE_NAME}}
         image: quay.io/ukhomeofficedigital/cop-file-upload-service:{{.IMAGE_TAG}}
         imagePullPolicy: Always
@@ -133,7 +108,7 @@ spec:
             containerPort: {{.FILE_UPLOAD_SERVICE_PORT}}
         env:
         - name: VIRUS_SCAN_HOST
-          value: localhost
+          value: {{.FILE_UPLOAD_SERVICE_VIRUS_SCAN_HOST}}
         - name: AUTH_CLIENT_ID
           value: {{.FILE_UPLOAD_SERVICE_KEYCLOAK_CLIENT_ID}}
         - name: AUTH_URL
