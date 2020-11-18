@@ -14,7 +14,7 @@ describe('VirusScanController', () => {
 
     beforeEach(() => {
       const {virusScan}: IConfig['services'] = config.services;
-      virusScanMock = nock(`http://${virusScan.host}:${virusScan.port}`).post(virusScan.path);
+      virusScanMock = nock(`http://${virusScan.host}`).post(virusScan.path);
 
       req = requestMock({
         file: testFile,
