@@ -13,15 +13,16 @@ class VirusScanController {
   public async scanFile(req: Request, res: Response, next: NextFunction): Promise<Response | void> {
     const {file, logger} = req;
     const {services} = this.config;
-    const {virusScan} = services;
+    const {host, path, port} = services.virusScan;
+    const url = `${host}${port ? `:${port}` : ''}${path}`;
     logger('Virus scanning file');
-    logger(`url = http://${virusScan.host}:${virusScan.port}${virusScan.path}`, 'debug');
+    logger(`url = ${url}`, 'debug');
     logger(`file.buffer.length = ${file.buffer.length}`, 'debug');
     logger(`file.originalname = ${file.originalname}`, 'debug');
 
     try {
       const result = await request
-        .post(`http://${virusScan.host}:${virusScan.port}${virusScan.path}`)
+        .post(url)
         .attach('file', file.buffer, file.originalname)
         .field('name', file.originalname);
 

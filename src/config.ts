@@ -44,7 +44,7 @@ const config: IConfig = {
     virusScan: {
       host: process.env.VIRUS_SCAN_HOST || 'localhost',
       path: '/scan',
-      port: process.env.VIRUS_SCAN_PORT || 8080
+      port: process.env.VIRUS_SCAN_PORT
     }
   },
   validFileTypes: {
