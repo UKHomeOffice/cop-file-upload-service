@@ -7,19 +7,3 @@ services:
       - 8181:8181
     environment:
       - VIRUS_SCAN_HOST=clamav-api
-    depends_on:
-      - clamav-api
-  clamav-api:
-    container_name: clamav-api
-    image: quay.io/ukhomeofficedigital/docker-clamav-rest:1.0.0
-    environment:
-      - CLAMD_HOST=clamav
-    ports:
-      - 8080:8080
-    depends_on:
-      - clamav
-  clamav:
-    container_name: clamav
-    image: quay.io/ukhomeofficedigital/clamav:v1.6.1
-    ports:
-      - 3310:3310
