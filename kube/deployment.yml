@@ -83,6 +83,10 @@ spec:
         volumeMounts:
           - name: certs
             mountPath: /certs
+            readOnly: true
+          - name: bundle
+            mountPath: /etc/ssl/certs
+            readOnly: true
       - name: {{.FILE_UPLOAD_SERVICE_NAME}}
         image: quay.io/ukhomeofficedigital/cop-file-upload-service:{{.IMAGE_TAG}}
         imagePullPolicy: Always
@@ -139,3 +143,6 @@ spec:
       - name: certs
         secret:
           secretName: "{{.FILE_UPLOAD_SERVICE_NAME}}-pod-cmio"
+      - name: bundle
+        configMap:
+          name: bundle
