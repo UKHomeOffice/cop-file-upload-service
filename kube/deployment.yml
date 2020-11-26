@@ -84,9 +84,6 @@ spec:
           - name: certs
             mountPath: /certs
             readOnly: true
-          - name: bundle
-            mountPath: /etc/ssl/certs
-            readOnly: true
       - name: {{.FILE_UPLOAD_SERVICE_NAME}}
         image: quay.io/ukhomeofficedigital/cop-file-upload-service:{{.IMAGE_TAG}}
         imagePullPolicy: Always
@@ -139,6 +136,10 @@ spec:
           value: {{.PROTOCOL}}
         - name: FILE_UPLOAD_SERVICE_LOG_LEVEL
           value: {{.FILE_UPLOAD_SERVICE_LOG_LEVEL}}
+        volumeMounts:
+          - name: bundle
+            mountPath: /etc/ssl/certs
+            readOnly: true
       volumes:
       - name: certs
         secret:
