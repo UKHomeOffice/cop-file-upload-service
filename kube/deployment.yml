@@ -137,6 +137,8 @@ spec:
         - name: FILE_UPLOAD_SERVICE_LOG_LEVEL
           value: {{.FILE_UPLOAD_SERVICE_LOG_LEVEL}}
         volumeMounts:
+          - name: certs
+            mountPath: /certs
           - name: bundle
             mountPath: /etc/ssl/certs
             readOnly: true
