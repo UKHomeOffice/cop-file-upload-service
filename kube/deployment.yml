@@ -136,9 +136,9 @@ spec:
           value: {{.PROTOCOL}}
         - name: FILE_UPLOAD_SERVICE_LOG_LEVEL
           value: {{.FILE_UPLOAD_SERVICE_LOG_LEVEL}}
+        - name: NODE_EXTRA_CA_CERTS
+          value: /etc/ssl/certs/acp-root.crt
         volumeMounts:
-          - name: certs
-            mountPath: /certs
           - name: bundle
             mountPath: /etc/ssl/certs
             readOnly: true
