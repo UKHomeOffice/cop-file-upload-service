@@ -432,6 +432,9 @@ steps:
   environment:
     SNOW_DESC_FILE: /drone/src/change-desc.txt
     SNOW_INT_ID_FILE: /drone/src/internal-id
+  volumes:
+  - name: dockersock
+    path: /var/run
   when:
     event:
     - promote
